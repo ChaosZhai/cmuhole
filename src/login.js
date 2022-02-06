@@ -65,22 +65,15 @@ class LoginPopupSelf extends Component {
   }
 
   valid_registration() {
-    if (
-      !this.ref.checkbox_terms.current.checked ||
-      !this.ref.checkbox_account.current.checked
-    ) {
-      alert('请同意条款与条件！');
-      return 1;
-    }
     if (this.ref.password.current.value.length < 8) {
-      alert('密码太短，至少应包含8个字符！');
+      alert('Password too short, should have length at least 8');
       return 2;
     }
     if (
       this.ref.password.current.value !==
       this.ref.password_confirm.current.value
     ) {
-      alert('密码不一致！');
+      alert('Passwords are not the same');
       return 3;
     }
     return 0;
