@@ -179,7 +179,7 @@ class LoginPopupSelf extends Component {
               throw new Error(JSON.stringify(json));
             }
 
-            //set_token(json.token);
+            set_token(json.token);
             alert('登录成功');
             this.setState({
               loading_status: 'done',
@@ -231,7 +231,7 @@ class LoginPopupSelf extends Component {
               throw new Error(JSON.stringify(json));
             }
 
-            //set_token(json.token);
+            set_token(json.token);
             alert('登录成功');
             this.setState({
               loading_status: 'done',
@@ -283,7 +283,7 @@ class LoginPopupSelf extends Component {
               throw new Error(JSON.stringify(json));
             }
 
-            //set_token(json.token);
+            set_token(json.token);
             alert('登录成功');
             this.setState({
               loading_status: 'done',
@@ -320,13 +320,13 @@ class LoginPopupSelf extends Component {
             {this.state.phase === -1 && (
               <>
                 <p>
-                  <b>Enter Email {process.env.REACT_APP_TITLE}</b>
+                  <b>输入邮箱来登录 {process.env.REACT_APP_TITLE}</b>
                 </p>
               </>
             )}
             <p style={this.state.phase === -1 ? {} : { display: 'none' }}>
               <label>
-                Email&nbsp;
+                邮箱&nbsp;
                 <input
                   ref={this.ref.username}
                   type="email"
@@ -343,11 +343,11 @@ class LoginPopupSelf extends Component {
             {this.state.phase === 0 && (
               <>
                 <p>
-                  <b>Enter password {process.env.REACT_APP_TITLE}</b>
+                  <b>输入密码来登录 {process.env.REACT_APP_TITLE}</b>
                 </p>
                 <p>
                   <label>
-                    password&nbsp;
+                    密码&nbsp;
                     <input
                       ref={this.ref.password}
                       type="password"
@@ -368,7 +368,7 @@ class LoginPopupSelf extends Component {
                       );
                     }}
                   >
-                    Forget Password?
+                    忘记密码？
                   </a>
                 </p>
               </>
@@ -472,9 +472,9 @@ class LoginPopupSelf extends Component {
                 onClick={this.next_step.bind(this)}
                 disabled={this.state.loading_status === 'loading'}
               >
-                Next Step
+                下一步
               </button>
-              <button onClick={this.props.on_close}>Cancel</button>
+              <button onClick={this.props.on_close}>取消</button>
             </p>
           </div>
         </div>
