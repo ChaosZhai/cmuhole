@@ -56,25 +56,9 @@ export class LoginForm extends Component {
                     <button
                       type="button"
                       onClick={() => {
-                        fetch(
-                          API_ROOT + 'security/logout?' + API_VERSION_PARAM(),
-                          {
-                            method: 'POST',
-                            headers: {
-                              TOKEN: token.value,
-                            },
-                          },
-                        )
-                          .then(get_json)
-                          .then((json) => {
-                            if (json.code !== 0) throw new Error(json.msg);
-                            token.set_value(null);
-                          })
-                          .catch((err) => {
-                            console.error(err);
-                            alert('' + err);
-                            token.set_value(null);
-                          });
+                        this.setState({
+                          token: NULL,
+                        });
                       }}
                     >
                       <span className="icon icon-logout" /> Log Out
